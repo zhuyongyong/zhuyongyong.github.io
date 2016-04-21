@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+    function setCookie() {
+        document.cookie = "test=22222";
+    }
+    function getCookie() {
+        var logs = document.getElementById("log");
+        if(document.cookie.length > 0) {
+            logs.textContent = document.cookie;
+        } else {
+            logs.textContent = "Can not get the cookie of main page";
+        }
+    }
+    function clearCookie() {
+        window.cookies.clear(function(){
+            getCookie();
+        });
+    }
+    function clearCookie2() {
+        windows.cookies.clear(function(){
+            getCookie();
+        });
+    }
+</script>
+<div class="content">
+  <div>Cookeis: <span id="log">N/A</span></div>
+  <button onclick="setCookie()" class="btn btn-default btn-lg btn-block">Set Cookie</button>
+  <button onclick="getCookie()" class="btn btn-default btn-lg btn-block">Get Cookie</button>
+  <button onclick="clearCookie()" class="btn btn-default btn-lg btn-block">Clear Cookie</button>
+  <button onclick="clearCookie2()" class="btn btn-default btn-lg btn-block">Clear Cookie2</button>
+</div>
+</body>
+</html>
